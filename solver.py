@@ -8,17 +8,17 @@ def find_empty(board):
             
     return None
 
-def print_board(bo):
-    for i in range(len(bo)):
-        if i % 3 == 0 and i != 0:
+def print_board(board):
+    for row in range(len(board)):
+        if row % 3 == 0 and row != 0:
             print("- - - - - - - - - - - - - ")
 
-        for j in range(len(bo[0])):
-            if j % 3 == 0 and j != 0:
+        for col in range(len(board[0])):
+            if col % 3 == 0 and col != 0:
                 print(" | ", end="")
 
-            if j == 8:
-                print(bo[i][j])
+            if col == 8:
+                print(board[row][col])
             else:
-                print(str(bo[i][j]) + " ", end="")
+                print(str(board[row][col]) + " ", end="")
 
