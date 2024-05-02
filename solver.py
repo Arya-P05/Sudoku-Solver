@@ -51,8 +51,27 @@ def print_board(board):
             else:
                 print(str(board[row][col]) + " ", end="")
 
+def solve(board):
+    find = find_empty(board)
+    if not find:
+        return True
+    else:
+        row, col = find
+
+    for num in range(1, 10):
+        if valid_board(board, num, (row, col)):
+            board[row][col] = num
+
+            if solve(board):
+                return True
+
+            board[row][col] = 0
+
+    return False
+
 print()
 print_board(board)
+solve(board)
 print("_____________________")
 print()
 print_board(board)
