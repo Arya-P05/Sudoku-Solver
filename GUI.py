@@ -79,10 +79,6 @@ class Grid:
             self.cubes[row][col].set_temp(0)
 
     def click(self, pos):
-        """
-        :param: pos
-        :return: (row, col)
-        """
         if pos[0] < self.width and pos[1] < self.height:
             gap = self.width / 9
             x = pos[0] // gap
